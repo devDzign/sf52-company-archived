@@ -1,0 +1,8 @@
+index:
+  path: /
+  controller: App\Controller\CompanyController::index
+
+
+#overblog_graphql_multiple_endpoint:
+#  resource: "@OverblogGraphQLBundle/Resources/config/routing/multiple.yaml"
+#  prefix: /graphql
