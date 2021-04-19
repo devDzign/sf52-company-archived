@@ -1,7 +1,6 @@
 import { Controller } from 'stimulus';
 import ReactDOM from 'react-dom';
 import React from 'react';
-import HealthReact from "../js/react/srr/elements/health-react.element";
 import SearchArchive from "../js/react/srr/elements/search-archive.element";
 
 

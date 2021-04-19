@@ -62,8 +62,6 @@ class AddressController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-//            return $this->redirectToRoute('address_index',['id'=> $company->getId()]);
             return $this->redirectToRoute('company_show', ['id'=> $company->getId()]);
         }
 

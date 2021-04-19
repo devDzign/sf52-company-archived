@@ -32,6 +32,14 @@ class ArchivedCompany
         $this->serializer       = $serializer;
     }
 
+    /**
+     * @param Company $company
+     * @param string  $action
+     * @param array   $context
+     * @param bool    $isCollection
+     *
+     * @throws \Symfony\Component\Serializer\Exception\ExceptionInterface
+     */
     public function archived(Company $company, string $action, array $context = [], bool $isCollection =false): void
     {
 

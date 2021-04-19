@@ -23,9 +23,7 @@ const SearchArchive = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-
         fetchArchive();
-
     }
 
     const fetchArchive = async () => {
@@ -34,27 +32,36 @@ const SearchArchive = (props) => {
         const res = await response.json();
 
         setSearch(prevState => ({
-            ...prevState, data: res.data.archives
+            ...prevState,
+            data: res.data.archives,
+            isLoading: false
         }));
-        setSearch(prevState => ({...prevState, isLoading: false}));
     }
 
 
     return (
         <div>
-            <form className="row g-3" onSubmit={handleSubmit}>
-                <input
-                    type="datetime-local"
-                    name={"dateSearch"}
-                    id="datetime-local"
-                    onChange={handleChange}
-                    value={search.dateSearch}
-                    step="1"
-                />
-                <div className="col-auto">
-                    <button type="submit" className="btn btn-primary mb-3">Confirm identity</button>
-                </div>
-            </form>
+            <div className="d-flex justify-content-center">
+                <form className="row g-3" onSubmit={handleSubmit}>
+
+                    <div className="input-group">
+                        <input
+                            type="datetime-local"
+                            name={"dateSearch"}
+                            id="datetime-local"
+                            onChange={handleChange}
+                            value={search.dateSearch}
+                            step="1"
+                        />
+                        <div className="input-group-text" id="btnGroupAddon2">
+                            <button type="submit" className="btn btn-primary">
+                                <i className="fas fa-search"></i> Ok
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
 
             {search.isLoading ? (
                 <div className="row d-flex justify-content-center align-content-center">

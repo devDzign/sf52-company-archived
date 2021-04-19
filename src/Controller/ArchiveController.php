@@ -16,11 +16,9 @@ class ArchiveController extends AbstractController
     #[Route('/{id}/archive', name: 'archive')]
     public function index(Company $company, ArchiveRepository $archiveRepository): Response
     {
-       $archives =  $archiveRepository->findAllArchivesForCompany( Company::class,  $company->getId());
-
        return $this->render("archive/index.html.twig" , [
            "companyOrigin" => $company,
-           "archives" => $archives
+           "archives" => $archiveRepository->findAllArchivesForCompany( Company::class,  $company->getId())
        ]);
     }
 
@@ -28,7 +26,7 @@ class ArchiveController extends AbstractController
     /**
      * @ParamConverter("archive", options={"id" = "id_archive"})
      */
-    public function detail(Company $company, Archive $archive): Response
+    public function details(Company $company, Archive $archive): Response
     {
         return $this->render("archive/detail.html.twig" , [
             "companyOrigin" => $company,
