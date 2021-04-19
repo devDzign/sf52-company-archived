@@ -17,6 +17,7 @@
         "gedmo/doctrine-extensions": "^3.0",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
+        "squizlabs/php_codesniffer": "^3.6",
         "stof/doctrine-extensions-bundle": "^1.6",
         "symfony/asset": "5.2.*",
         "symfony/console": "5.2.*",
