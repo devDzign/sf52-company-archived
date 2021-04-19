@@ -16,10 +16,10 @@ class ArchiveController extends AbstractController
     #[Route('/{id}/archive', name: 'archive')]
     public function index(Company $company, ArchiveRepository $archiveRepository): Response
     {
-       return $this->render("archive/index.html.twig" , [
+        return $this->render("archive/index.html.twig", [
            "companyOrigin" => $company,
-           "archives" => $archiveRepository->findAllArchivesForCompany( Company::class,  $company->getId())
-       ]);
+           "archives" => $archiveRepository->findAllArchivesForCompany(Company::class, $company->getId())
+        ]);
     }
 
     #[Route('/{id}/archive/{id_archive}', name: 'detail_archive')]
@@ -28,7 +28,7 @@ class ArchiveController extends AbstractController
      */
     public function details(Company $company, Archive $archive): Response
     {
-        return $this->render("archive/detail.html.twig" , [
+        return $this->render("archive/detail.html.twig", [
             "companyOrigin" => $company,
             "archive" => $archive
         ]);

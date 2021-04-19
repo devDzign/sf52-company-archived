@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Services;
-
 
 class ConvertCsvToArray
 {
@@ -14,16 +12,16 @@ class ConvertCsvToArray
      */
     public function convert($filename, $delimiter = ';'): ?array
     {
-        if(!file_exists($filename) || !is_readable($filename)) {
+        if (!file_exists($filename) || !is_readable($filename)) {
             return null;
         }
 
-        $header = NULL;
+        $header = null;
         $data = array();
 
-        if (($handle = fopen($filename, 'r')) !== FALSE) {
-            while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
-                if(!$header) {
+        if (($handle = fopen($filename, 'r')) !== false) {
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
+                if (!$header) {
                     $header = $row;
                 } else {
                     $data[] = array_combine($header, $row);

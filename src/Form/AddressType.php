@@ -17,7 +17,7 @@ class AddressType extends AbstractType
     {
         $builder
             ->add('streetNumber', NumberType::class)
-            ->add('streetType',  ChoiceType::class, [
+            ->add('streetType', ChoiceType::class, [
                 'choices'  => [
                     'rue' => 'rue',
                     'avenue'     => 'avenue',
@@ -27,7 +27,7 @@ class AddressType extends AbstractType
             ])
             ->add('streetName', TextareaType::class)
             ->add('city', TextType::class)
-            ->add('zipCode',TextType::class)
+            ->add('zipCode', TextType::class)
         ;
     }
 

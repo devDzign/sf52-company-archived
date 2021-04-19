@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\EventListener;
 
 use App\Entity\Address;
@@ -69,8 +68,7 @@ class ArchivedSubscriber implements EventSubscriber
             return;
         }
 
-        ($object instanceof Address) ?  $this->processAddress($args, $action): $this->processCompany($args, $action);
-
+        ($object instanceof Address) ?  $this->processAddress($args, $action) : $this->processCompany($args, $action);
     }
 
     private function processCompany(LifecycleEventArgs $args, string $action): void

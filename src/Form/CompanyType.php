@@ -26,7 +26,7 @@ class CompanyType extends AbstractType
             ->add('siren', TextType::class)
             ->add('cityOfRegistration', TextType::class)
             ->add('capital', NumberType::class, [
-                'html5'=> true,
+                'html5' => true,
             ])
             ->add('legalCategory', EntityType::class, [
                 'class' => LegalCategories::class,
@@ -48,10 +48,6 @@ class CompanyType extends AbstractType
 //            });
 
         ;
-
-
-
-
     }
 
     public function configureOptions(OptionsResolver $resolver)

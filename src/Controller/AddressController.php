@@ -29,7 +29,7 @@ class AddressController extends AbstractController
             $entityManager->flush();
 
 //            return $this->redirectToRoute('address_index', ['id'=> $company->getId()]);
-            return $this->redirectToRoute('company_show', ['id'=> $company->getId()]);
+            return $this->redirectToRoute('company_show', ['id' => $company->getId()]);
         }
 
         return $this->render('address/new.html.twig', [
@@ -43,7 +43,7 @@ class AddressController extends AbstractController
     /**
      * @ParamConverter("address", options={"id" = "id_address"})
      */
-    public function show(Company $company,Address $address): Response
+    public function show(Company $company, Address $address): Response
     {
         return $this->render('address/show.html.twig', [
             'address' => $address,
@@ -55,14 +55,14 @@ class AddressController extends AbstractController
     /**
      * @ParamConverter("address", options={"id" = "id_address"})
      */
-    public function edit(Request $request,Company $company, Address $address): Response
+    public function edit(Request $request, Company $company, Address $address): Response
     {
         $form = $this->createForm(AddressType::class, $address);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('company_show', ['id'=> $company->getId()]);
+            return $this->redirectToRoute('company_show', ['id' => $company->getId()]);
         }
 
         return $this->render('address/edit.html.twig', [
@@ -76,14 +76,14 @@ class AddressController extends AbstractController
     /**
      * @ParamConverter("address", options={"id" = "id_address"})
      */
-    public function delete(Request $request,Company $company, Address $address): Response
+    public function delete(Request $request, Company $company, Address $address): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$address->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $address->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($address);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('company_show', ['id'=> $company->getId()]);
+        return $this->redirectToRoute('company_show', ['id' => $company->getId()]);
     }
 }

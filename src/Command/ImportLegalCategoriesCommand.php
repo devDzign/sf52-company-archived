@@ -85,7 +85,7 @@ class ImportLegalCategoriesCommand extends Command
         $progress->start();
 
         // Processing on each row of data
-        foreach($data as $row) {
+        foreach ($data as $row) {
             $legalCategory = new LegalCategories();
             $legalCategory
                 ->setCode($row['Code'])
@@ -116,5 +116,4 @@ class ImportLegalCategoriesCommand extends Command
         // Ending the progress bar process
         $progress->finish();
     }
-
 }

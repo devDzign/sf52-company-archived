@@ -138,8 +138,6 @@ class Address
 
     public function __toString()
     {
-       return (string) $this->getCity();
+        return (string) $this->getCity();
     }
-
-
 }

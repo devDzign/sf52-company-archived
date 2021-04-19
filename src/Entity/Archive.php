@@ -75,7 +75,7 @@ class Archive
 
         return $this;
     }
-    
+
     public function getAction(): ?string
     {
         return $this->action;

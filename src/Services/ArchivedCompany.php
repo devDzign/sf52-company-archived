@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Services;
-
 
 use App\Entity\Archive;
 use App\Entity\Company;
@@ -40,7 +38,7 @@ class ArchivedCompany
      *
      * @throws \Symfony\Component\Serializer\Exception\ExceptionInterface
      */
-    public function archived(Company $company, string $action, array $context = [], bool $isCollection =false): void
+    public function archived(Company $company, string $action, array $context = [], bool $isCollection = false): void
     {
 
         $this->objectNormalizer->setSerializer($this->serializer);
@@ -51,7 +49,7 @@ class ArchivedCompany
             ->setAction($action)
             ->setData($this->objectNormalizer->normalize($company, null, $context));
 
-        if ($action === 'update' && $isCollection ) {
+        if ($action === 'update' && $isCollection) {
             $this->entityManager->clear();
         }
 

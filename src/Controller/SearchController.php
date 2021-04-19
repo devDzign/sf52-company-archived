@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class SearchController extends AbstractController
 {
     #[Route('/search/{id}/archive', name: 'search_archive')]
@@ -66,6 +65,4 @@ class SearchController extends AbstractController
             ]
         );
     }
-
-
 }
