@@ -105,7 +105,6 @@
             "yarn build"
         ],
         "compile": [
-            "compose install",
             "php bin/console d:m:m -n",
             "php bin/console app:import:legal-categories"
         ]
