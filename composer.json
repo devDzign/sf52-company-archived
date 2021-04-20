@@ -104,6 +104,8 @@
             "@auto-scripts"
         ],
         "compile": [
+            "yarn install",
+            "yarn build",
             "php bin/console d:m:m -n",
             "php bin/console app:import:legal-categories"
         ]
