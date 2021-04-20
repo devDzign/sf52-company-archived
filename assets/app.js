@@ -10,6 +10,7 @@ import './styles/app.scss';
 // You can specify which plugins you need
 import { Tooltip, Toast, Popover, Modal, ScrollSpy, Alert,Tab, Button, Carousel, Collapse, Dropdown, Offcanvas } from 'bootstrap';
 
+
 // import './js/test-jquery'
 // import './js/form_collection'
 $('select').select2();
