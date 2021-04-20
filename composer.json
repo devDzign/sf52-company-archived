@@ -100,12 +100,12 @@
             "@auto-scripts"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "yarn install",
+            "yarn build"
         ],
         "compile": [
             "compose install",
-            "yarn install",
-            "yarn build",
             "php bin/console d:m:m -n",
             "php bin/console app:import:legal-categories"
         ]
