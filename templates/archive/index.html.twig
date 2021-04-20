@@ -68,7 +68,9 @@
                         </ul>
                         <div class="card-body">
                             <h4 class="text-center">
-                                Total Adresses ({{ companyOrigin.localizations | length }})
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Total Adresses  ({{ companyOrigin.localizations | length }})
+                                </button>
                             </h4>
 
                             <div class="d-flex justify-content-center align-content-between">
@@ -136,8 +138,46 @@
                             <div class="card-body">
 
                                 <h4 class="text-center">
-                                    Total Adresses ({{ company.localizations | length }})
+
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ archive.id }}">
+                                        Total Adresses ({{ company.localizations | length }})
+                                    </button>
                                 </h4>
+
+
+                                <div class="modal fade" id="exampleModal{{ archive.id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ archive.id }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Toutes les adresses</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                </button>
+                                            </div>
+
+                                            <div class="modal-body">
+                                                <div class="d-flex justify-content-center align-content-between">
+                                                    {% for address in company.localizations %}
+
+                                                        <div class="card me-1" style="width: 20rem;">
+                                                            <div class="card-body">
+                                                                <div class="d-grid gap-1 mb-3">
+
+                                                                    <a href="#" class="btn btn-outline-success"
+                                                                    >
+                                                                        <i class="fas fa-map-marker-alt"></i> {{ address.streetNumber }}
+                                                                        ,{{ address.streetType}} {{ address.streetName }} ,{{ address.zipCode }} {{ address.city }}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
 
                                 <div class="d-flex justify-content-center align-content-between">
                                     <div class="card me-1" style="width: 20rem;">
