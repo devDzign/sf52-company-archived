@@ -141,5 +141,5 @@ preparedb: ## prepare environment test
 	$(CONSOLE) doctrine:database:drop --if-exists -f
 	$(CONSOLE) doctrine:database:create
 	$(CONSOLE) doctrine:migrations:diff
-	$(CONSOLE) doctrine:migrations:migrate
+	$(CONSOLE) doctrine:migrations:migrate -n
 	$(CONSOLE) app:import:legal-categories
