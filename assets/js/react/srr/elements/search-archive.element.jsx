@@ -28,7 +28,7 @@ const SearchArchive = (props) => {
 
     const fetchArchive = async () => {
         setSearch(prevState => ({...prevState, isLoading: true}));
-        const response = await fetch(`https://127.0.0.1:8000/api/search/${search.companyId}/archive/${search.dateSearch}/exact`);
+        const response = await fetch(`/api/search/${search.companyId}/archive/${search.dateSearch}/exact`);
         const res = await response.json();
 
         setSearch(prevState => ({
