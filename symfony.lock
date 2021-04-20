@@ -634,9 +634,6 @@
     "symfony/uid": {
         "version": "v5.2.6"
     },
-    "symfony/ux-chartjs": {
-        "version": "v1.2.0"
-    },
     "symfony/ux-swup": {
         "version": "v1.2.0"
     },
